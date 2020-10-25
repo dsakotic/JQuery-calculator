@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("input[type='button']").click(function () {
+                var radioValue = $("input[value='plus']:checked").val();
+                var a = $("#Text1").val();
+                var a = parseFloat(a);
+                var b = $("#Text2").val();
+                var b = parseFloat(b);
+                var c = a + b;
+                if (radioValue) {
+                    document.getElementById("demo").innerHTML =
+                        "Rezultat je: " + c;
+                }
+            });
+
+            $("input[type='button']").click(function () {
+                var radioValue = $("input[value='minus']:checked").val();
+                var a = $("#Text1").val();
+                var a = parseFloat(a);
+                var b = $("#Text2").val();
+                var b = parseFloat(b);
+                var c = a - b;
+                if (radioValue) {
+                    document.getElementById("demo").innerHTML =
+                        "Rezultat je: " + c;
+                    
+                }
+            });
+            $("input[type='button']").click(function () {
+                var radioValue = $("input[value='mnozenje']:checked").val();
+                var a = $("#Text1").val();
+                var a = parseFloat(a);
+                var b = $("#Text2").val();
+                var b = parseFloat(b);
+                var c = a * b;
+                if (radioValue) {
+                    document.getElementById("demo").innerHTML =
+                        "Rezultat je: " + c;
+                }
+            });
+            $("input[type='button']").click(function () {
+                var radioValue = $("input[value='deljenje']:checked").val();
+                var a = $("#Text1").val();
+                var a = parseFloat(a);
+                var b = $("#Text2").val();
+                var b = parseFloat(b);
+                var c = a / b;
+                if (radioValue) {
+                    document.getElementById("demo").innerHTML =
+                        "Rezultat je: " + c;
+                }
+            });
+        });
+
+    </script>
+</head>
+<body>
+
+    <form>
+        <label for="Text1">Unesite prvi operand</label><br />
+        <input id="Text1" type="text" />
+        <br/>
+        <label for="Text2">Unesite drugi operand</label><br/>
+        <input id="Text2" type="text" /><br/>
+        <br />
+        <br/>
+
+
+    </form>
+
+    <form action="">
+        <input type="radio" name="calc" value="plus"> +<br>
+        <input type="radio" name="calc" value="minus"> -<br>
+        <input type="radio" name="calc" value="mnozenje"> *<br>
+        <input type="radio" name="calc" value="deljenje"> /<br>
+
+        <input id="Button1" type="button" value="Izracunaj" onclick="izracunaj()"/>
+        <p id="demo">Rezultat je:</p>
+
+    </form>
+
+</body>
+</html>
